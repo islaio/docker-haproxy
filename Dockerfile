@@ -15,7 +15,7 @@ RUN echo 'ENABLED=1' >> /etc/default/haproxy
 RUN adduser --system haproxy
 RUN mkdir /etc/haproxy
 RUN mkdir /etc/haproxy/errors
-RUN service haproxy start
+# RUN service haproxy start
 EXPOSE 80
 EXPOSE 443
 
