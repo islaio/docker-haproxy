@@ -9,8 +9,9 @@ RUN ln -s /usr/local/sbin/haproxy /usr/sbin/haproxy
 RUN mkdir /usr/share/haproxy
 RUN wget http://efemoral.lovius.net/wp-content/uploads/2013/02/init.d.haproxy.txt
 RUN mv init.d.haproxy.txt /etc/init.d/haproxy
-RUN chmod +x /etc/init.d/haproxy
-RUN update-rc.d haproxy defaults
+RUB cd /etc/haproxy; wget https://raw.github.com/alfonsodev/docker-haproxy/master/haproxy.cfg
+# RUN chmod +x /etc/init.d/haproxy
+# RUN update-rc.d haproxy defaults
 RUN echo 'ENABLED=1' >> /etc/default/haproxy
 RUN adduser --system haproxy
 RUN mkdir /etc/haproxy
@@ -18,4 +19,4 @@ RUN mkdir /etc/haproxy/errors
 # RUN service haproxy start
 EXPOSE 80
 EXPOSE 443
-
+CMD haproxy -db -f /etc/haproxy/haproxy.cfg
