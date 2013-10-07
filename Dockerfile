@@ -1,4 +1,5 @@
 # DOCKER-VERSION 0.3.4
+# Inspired in http://efemoral.lovius.net/building-haproxy-from-git-on-ubuntu-12-04/
 FROM ubuntu:12.04
 MAINTAINER Alfonso Fernandez "alfonso@isla.io"
 RUN apt-get update
