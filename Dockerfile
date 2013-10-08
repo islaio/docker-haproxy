@@ -17,4 +17,4 @@ RUN cd /etc/haproxy; wget https://raw.github.com/alfonsodev/docker-haproxy/maste
 # RUN service haproxy start
 EXPOSE 80
 EXPOSE 443
-# CMD haproxy -db -f /etc/haproxy/haproxy.cfg
+CMD haproxy -db -f /etc/haproxy/haproxy.cfg
