@@ -10,11 +10,11 @@ RUN mkdir /usr/share/haproxy
 # RUN chmod +x /etc/init.d/haproxy
 # RUN update-rc.d haproxy defaults
 RUN echo 'ENABLED=1' >> /etc/default/haproxy
-# RUN adduser --system haproxy
+RUN adduser --system haproxy
 RUN mkdir /etc/haproxy
 RUN mkdir /etc/haproxy/errors
 RUN cd /etc/haproxy; wget https://raw.github.com/alfonsodev/docker-haproxy/master/haproxy.cfg
 # RUN service haproxy start
 EXPOSE 80
 EXPOSE 443
-CMD haproxy -db -f /etc/haproxy/haproxy.cfg
+# CMD haproxy -db -f /etc/haproxy/haproxy.cfg
