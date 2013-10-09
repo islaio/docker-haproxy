@@ -10,7 +10,7 @@ RUN mkdir /usr/share/haproxy
 # RUN chmod +x /etc/init.d/haproxy
 # RUN update-rc.d haproxy defaults
 RUN echo 'ENABLED=1' >> /etc/default/haproxy
-RUN adduser --system haproxy
+RUN adduser --system --group haproxy
 RUN mkdir /etc/haproxy
 RUN mkdir /etc/haproxy/errors
 RUN cd /etc/haproxy; wget https://raw.github.com/alfonsodev/docker-haproxy/master/haproxy.cfg
